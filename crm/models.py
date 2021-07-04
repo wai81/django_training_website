@@ -14,10 +14,10 @@ class StatusCrm(models.Model):
 
 
 class Order(models.Model):
-    order_date_create = models.DateTimeField(auto_now=True)
+    order_date_create = models.DateTimeField(auto_now=True, verbose_name='Дата заказа')
     order_name = models.CharField(max_length=200, verbose_name='Имя')
     order_phone = models.CharField(max_length=200, verbose_name='Телефон')
-    order_status = models.ForeignKey(StatusCrm, on_delete=models.PROTECT, null=True, blank=True)
+    order_status = models.ForeignKey(StatusCrm, on_delete=models.PROTECT, null=True, blank=True, verbose_name='Статус')
 
     def __str__(self):
         return self.order_name
