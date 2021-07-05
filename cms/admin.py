@@ -3,6 +3,7 @@ from django.utils.safestring import mark_safe
 
 from .models import CmsSlider
 
+
 # Register your models here.
 class CmsAdm(admin.ModelAdmin):
     list_display = ('cms_title', 'cms_text', 'cms_css', 'get_img')
@@ -11,7 +12,6 @@ class CmsAdm(admin.ModelAdmin):
 
     fields = ('cms_title', 'cms_text', 'cms_css', 'cms_img', 'get_img')
     readonly_fields = ('get_img',)
-
 
     def get_img(self, obj):
         if obj.cms_img:
